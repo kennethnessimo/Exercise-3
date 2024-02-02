@@ -77,3 +77,7 @@ double getDistanceTraveled(double velocityX, double velocityY){
 double targetPractice(double distanceToTarget, double velocityX, double velocityY){
     return (distanceToTarget - getDistanceTraveled(velocityX, velocityY));
 }
+
+void playTargetPractice() {
+    
+}

@@ -13,7 +13,8 @@ void testDeviation(double compareOperand, double toOperand, double maxError, str
 
 int main() {
 
-	cout << randomWithLimits(1,100)  << endl;
+	playTargetPractice();
+	/*cout << randomWithLimits(1,100)  << endl;
 	testDeviation(posY(0, 25, 2.5), 31.84, 0.001, "velY(25, 2.5)");
 	
 	vector<double> vekotor = getVelocityVector(27.5, 15.64);
@@ -22,6 +23,6 @@ int main() {
 	}
 
 	double test = getDistanceTraveled(13.8728, 7.22175);
-	cout << test;
+	cout << test;*/
     return 0;
 }

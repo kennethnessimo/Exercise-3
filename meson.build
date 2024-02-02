@@ -30,6 +30,7 @@ exe = executable(
   'program',
   src,
 'cannonball.cpp',
+'cannonball_viz.cpp',
 'main.cpp',
 'utilities.cpp',
   dependencies : [animationwindow_dep, sdl2_dep],

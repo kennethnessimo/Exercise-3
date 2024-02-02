@@ -1,4 +1,6 @@
 #include "cannonball.h"
+#include "utilities.h"
+#include "cannonball_viz.h"
 
 double acclY() {
     return -9.81;
@@ -79,5 +81,34 @@ double targetPractice(double distanceToTarget, double velocityX, double velocity
 }
 
 void playTargetPractice() {
-    
+    int target = randomWithLimits(100, 1000);
+
+    double initVelocity {0};
+    double theta {0};
+    for (int i = 0; i < 10; i++) {
+        cout << "Skriv inn en startfart: " << endl;
+        cin >> initVelocity;
+        cout << "Skriv inn en vinkel: " << endl;
+        cin >> theta; 
+        vector<double> velocity = getVelocityVector(theta, initVelocity);
+        double velocityX = velocity.at(0);
+        double velocityY = velocity.at(1);
+        cannonBallViz(target, 1000, velocityX, velocityY, 100);
+
+        if (abs(targetPractice(target, velocityX, velocityY)) < 5) {
+            cout << "Grattis, du traff" << endl;
+            break;
+        }
+        else {
+            cout << "Beklager, du bommet." << endl;
+            cout << "Du bommet med: " << targetPractice(target, velocityX, velocityY) << endl;
+            if (targetPractice(target, velocityX, velocityY) < 0) {
+                cout << "Skuddet var for langt." << endl;
+            }
+            else {
+                cout << "Skuddet var for kort." << endl;
+            }
+        }
+        printTime(flightTime(velocityY));
+    }
 }
